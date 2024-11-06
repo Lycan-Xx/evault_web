@@ -1,16 +1,29 @@
 import React from 'react'
-import Header from './components/Header'
-import About from './components/About'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Features from './components/Features'
 import Services from './components/Services'
 import Testimonials from './components/Testimonials'
+import FAQ from './components/FAQ'
+import Footer from './components/Footer'
+
+
+
+
 
 function App() {
     return (
         <div className="className">
-            <Header />
-            <About />
+            <Navbar />
+            <Hero />
+            <Features />
             <Services />
+
+
             <Testimonials />
+            <FAQ />
+            <Footer />
+
 
         </div>
     )
