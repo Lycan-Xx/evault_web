@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12">
           <div>
-            <h3 className="text-2xl font-bold mb-4">DATAVENDOR</h3>
+            <h3 className="text-2xl font-bold mb-4">eVault</h3>
             <p className="text-gray-300 mb-4">
-              DATAVENDOR offers the best and most secure way to recharge data, airtime, cable and more at the best prices with instant delivery.
+              Evault offers the best and most secure way to recharge data, airtime, cable and more at the best prices with instant delivery.
             </p>
             <div className="flex space-x-4">
               <Facebook className="w-6 h-6 cursor-pointer hover:text-orange-500" />
@@ -31,8 +31,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>📞 08012345678</li>
-              <li>✉️ support@datavendor.com</li>
+              <li><a href="#">📞 +234 000000000</a></li>
+              <li><a href="#">✉️ support@evault.com</a></li>
               <li>🏢 123 Main Street, Lagos, NG</li>
             </ul>
           </div>
@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
-          <p>&copy; {new Date().getFullYear()} DATAVENDOR. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} eVault. All rights reserved.</p>
         </div>
       </div>
     </footer>

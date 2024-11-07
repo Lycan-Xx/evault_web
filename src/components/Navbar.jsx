@@ -20,12 +20,12 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full py-4 px-6 md:px-16 transition-all duration-300 ${
-        isScrolled ? "bg-blue-900" : "bg-black"
+      className={`fixed top-0 left-0 w-full py-2 px-6 md:px-16 transition-all duration-300 rounded-b-2xl ${
+        isScrolled ? "bg-[#000B5B]" : "bg-black"
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-white text-2xl font-bold">DataVendor</div>
+        <div className="text-white text-2xl font-bold"> eVault </div>
 
         <div className="hidden md:flex space-x-8">
           <a
@@ -65,7 +65,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 z-10">
           {" "}
           {/* Added container div with space-x-4 for 1cm (or close to 1cm) spacing */}
           <button className="bg-orange-700 text-white px-6 py-2 rounded-md hover:bg-orange-600 font-medium text-lg">
