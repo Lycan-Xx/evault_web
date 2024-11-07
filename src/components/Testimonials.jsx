@@ -1,12 +1,7 @@
 import React from 'react';
 
 const testimonials = [
-  {
-    name: 'John Emmanuel',
-    role: 'Regular Customer',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80',
-    text: 'These guys are great... All thanks to DATAVENDOR! I can really say that since I joined this site I have been saving more than before. Thanks to DATAVENDOR! Keep up the good work!'
-  },
+
   {
     name: 'John Doe',
     role: 'Marketing Manager',
