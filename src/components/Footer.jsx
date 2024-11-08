@@ -32,8 +32,8 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-300">
               <li><a href="#">📞 +234 000000000</a></li>
-              <li><a href="#">✉️ support@evault.com</a></li>
-              <li>🏢 123 Main Street, Lagos, NG</li>
+              <li><a href="#">✉️ support@evault.com.ng</a></li>
+              <li>🏢 No 29 Atiku Abubakar Mall, Numan road, Adamawa State, NG</li>
             </ul>
           </div>
           

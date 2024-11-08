@@ -25,7 +25,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-white text-2xl font-bold"> eVault </div>
+        <div className="text-white text-3xl font-bold"> eVault </div>
 
         <div className="hidden md:flex space-x-8">
           <a

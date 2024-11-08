@@ -8,28 +8,28 @@ const About = () => {
     {
       id: 1,
       icon: <FaQuestionCircle />,
-      question: "Why Should I trust you?",
-      answer: "We are a reliable and trusted platform with a proven track record of providing seamless digital services. Our transparent processes, secure transactions, and commitment to customer satisfaction make us a dependable choice for all your recharge and subscription needs.",
+      question: "Sign in",
+      answer: "Firstly you need to create an account and sign in using your registered username & password",
       color: 'blue'
     },
     {
       id: 2,
       icon: <FaNetworkWired />,
-      question: "What networks Airtime do you convert?",
+      question: "Fund Wallet",
       answer: "We support airtime conversion for all major Nigerian networks, including MTN, Glo, Airtel, and 9Mobile. Our platform ensures quick and hassle-free conversion across these networks.",
       color: 'green'
     },
     {
       id: 3,
       icon: <FaMobileAlt />,
-      question: "How can I check my data balance?",
+      question: "Instant delivery",
       answer: "You can easily check your data balance directly through our platform. Simply log in to your account, navigate to the data services section, and view your current data balance in real-time.",
       color: 'purple'
     },
     {
       id: 4,
       icon: <FaCreditCard />,
-      question: "Do you accept recharge card pins or VTU for airtime conversion?",
+      question: "Place order",
       answer: "Yes, we accept both recharge card pins and VTU (Virtual Top-Up) for airtime conversion. Our flexible platform supports multiple payment methods to provide you with convenient options.",
       color: 'orange'
     }
@@ -40,19 +40,19 @@ const About = () => {
   }
 
   return (
-    <section className="bg-white py-16 px-6 md:px-12 rounded-t-2xl">
+    <section className="bg-white py-16 px-6 md:px-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         {/* Left Side - Company Description */}
         <div className="md:w-1/2 mb-8 md:mr-12">
-          <h2 className="text-3xl font-bold text-blue-900 mb-6">
+          <h2 className="text-4xl font-bold text-black mb-6">
             About Evault
           </h2>
-          <p className="text-gray-700 mb-6">
+          <p className="text-gray-600 mb-6 text-[1.2rem]">
             Evault is a leading provider of Voice, Data, and Home Broadband services. 
             We partner with local telcos to offer customizable plans with additional features 
             that meet your unique communication needs.
           </p>
-          <button className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">
+          <button className="bg-orange-600 text-[1.2rem] text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">
             Learn More
           </button>
         </div>

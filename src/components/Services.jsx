@@ -39,10 +39,10 @@ const Services = () => {
     <div className="px-6 md:px-16 py-20 bg-gray-200 rounded-b-2xl">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h3 className='text-orange-500 font-bold text-2xl'>Services</h3>
+          <h3 className='text-orange-500 font-bold text-4xl'>Services</h3>
           <br />
           <h2 className="text-3xl font-bold mb-4">Checkout Our Services</h2>
-          <p className="text-gray-600">All Our Services Are Automated With Instant Delivery</p>
+          <p className="text-gray-600 text-[1.2rem]">All Our Services Are Automated With Instant Delivery</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
