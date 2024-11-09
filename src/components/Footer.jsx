@@ -47,9 +47,17 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
-          <p>&copy; {new Date().getFullYear()} eVault. All rights reserved.</p>
-        </div>
+		<div className='border-t border-gray-700 mt-12 pt-8 text-gray-300 flex justify-between items-center'>
+			<p className='text-left text-gray-300 mt-12'>Powered By <b>iSERVEBAY</b></p>
+			<div className='text-right text-gray-300 mt-12 flex items-center'> 
+				<a href="#">Privacy Policy</a> <span className='mx-2'> | </span> 
+				<a href="#">Terms & Conditions</a> 
+				</div>
+				</div>
+
+		
+
+
       </div>
     </footer>
   );

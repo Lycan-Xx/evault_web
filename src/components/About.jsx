@@ -8,7 +8,7 @@ const About = () => {
     {
       id: 1,
       icon: <FaQuestionCircle />,
-      question: "Sign in",
+      question: "Signing In",
       answer: "Firstly you need to create an account and sign in using your registered username & password",
       color: 'blue'
     },
@@ -22,14 +22,14 @@ const About = () => {
     {
       id: 3,
       icon: <FaMobileAlt />,
-      question: "Instant delivery",
+      question: "Instant Delivery",
       answer: "You can easily check your data balance directly through our platform. Simply log in to your account, navigate to the data services section, and view your current data balance in real-time.",
       color: 'purple'
     },
     {
       id: 4,
       icon: <FaCreditCard />,
-      question: "Place order",
+      question: "Place Order",
       answer: "Yes, we accept both recharge card pins and VTU (Virtual Top-Up) for airtime conversion. Our flexible platform supports multiple payment methods to provide you with convenient options.",
       color: 'orange'
     }
@@ -40,12 +40,12 @@ const About = () => {
   }
 
   return (
-    <section className="bg-white py-16 px-6 md:px-12">
+    <section className="bg-gray-200 py-16 px-6 md:px-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         {/* Left Side - Company Description */}
         <div className="md:w-1/2 mb-8 md:mr-12">
           <h2 className="text-4xl font-bold text-black mb-6">
-            About Evault
+            <span className='text-orange-500'>About</span> Evault
           </h2>
           <p className="text-gray-600 mb-6 text-[1.2rem]">
             Evault is a leading provider of Voice, Data, and Home Broadband services. 

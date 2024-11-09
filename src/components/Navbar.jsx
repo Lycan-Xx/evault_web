@@ -28,26 +28,21 @@ const Navbar = () => {
         <div className="text-white text-3xl font-bold"> eVault </div>
 
         <div className="hidden md:flex space-x-8">
-          <a
+        <a
             href="#"
             className="text-white hover:text-orange-700 text-xl font-bold"
-            onClick={() => scrollToSection("Home")}
+            onClick={() => scrollToSection("About")}
           >
-            Home
-          </a>
+            About
+            </a>
+
           <a
             href="#"
             className="text-white hover:text-orange-700 text-xl font-bold"
             onClick={() => scrollToSection("Services")}
           >
             Services
-          </a>
-          <a
-            href="#"
-            className="text-white hover:text-orange-700 text-xl font-bold"
-            onClick={() => scrollToSection("About")}
-          >
-            About
+         
           </a>
           <a
             href="#"
