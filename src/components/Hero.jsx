@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import React from 'react';
+import { useState } from 'react';
 
 const Hero = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      setDropdownOpen(false); // Close dropdown after selecting an item
     }
   };
 
@@ -17,7 +16,13 @@ const Hero = () => {
       {/* Navigation Links */}
       <div className="absolute top-6 left-0 right-0 z-20">
         <div className="flex justify-center space-x-8">
-          <a 
+          </div>
+		  </div>
+
+
+<div className='absolute top-6 left-3 right-3 flex justify-center space-x-8'>
+ 
+		  <a 
             href="#about" 
             className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
             onClick={(e) => {
@@ -27,58 +32,17 @@ const Hero = () => {
           >
             About
           </a>
-
-
-          <div className="relative" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
-            <button 
-              className="text-white hover:text-orange-500 transition-colors duration-500 text-xl font-extrabold flex items-center"
-              onClick={() => setDropdownOpen(!dropdownOpen)} // Toggle dropdown on click
-            >
-              <span>Services</span>
-              {dropdownOpen ? (
-                <FaChevronUp className="ml-1 icon-size" />
-              ) : (
-                <FaChevronDown className="ml-1 icon-size" />
-              )}
-            </button>
-            {dropdownOpen && (
-              <div 
-                className="absolute left-0 mt-2 w-40 bg-white rounded-md shadow-lg z-10"
-                onMouseEnter={() => setDropdownOpen(true)} // Keep dropdown open when mouse is over it
-              >
-                <ul className="py-2">
-                  <li 
-                    className="px-4 py-2 text-gray-800 hover:bg-gray-200 cursor-pointer" 
-                    onClick={() => scrollToSection('boy')}
-                  >
-                    Boy
-                  </li>
-                  <li 
-                    className="px-4 py-2 text-gray-800 hover:bg-gray-200 cursor-pointer" 
-                    onClick={() => scrollToSection('girl')}
-                  >
-                    Girl
-                  </li>
-                  <li 
-                    className="px-4 py-2 text-gray-800 hover:bg-gray-200 cursor-pointer" 
-                    onClick={() => scrollToSection('man')}
-                  >
-                    Man
-                  </li>
-                  <li 
-                    className="px-4 py-2 text-gray-800 hover:bg-gray-200 cursor-pointer" 
-                    onClick={() => scrollToSection('woman')}
-                  >
-                    Woman
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
-
-
-
-		  <a 
+          <a 
+            href="#services" 
+            className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('services');
+            }}
+          >
+            Services
+          </a>
+          <a 
             href="#faq" 
             className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
             onClick={(e) => {
@@ -98,9 +62,10 @@ const Hero = () => {
           >
             Contact
           </a>
-        </div>
-      </div>
+    
 
+	   
+</div>
       {/* Logo */}
       <div className="absolute top-0 left-0 sm:top-0 sm:left-0">
         <img 
@@ -115,19 +80,20 @@ const Hero = () => {
         <h1>eVault</h1>
       </div>
 
-	  
-      {/* Sign In / Sign Up Buttons */}
-      <div className="absolute top-6 right-6 md:top-4 md:right-12 flex items-center space-x-4 z-10">
-        <div className="flex items-center space-x-4">
-          
-          <button className="bg-orange-700 text-white px-6 py-2 rounded-md hover:bg-blue-800 transition font-medium text-lg">
-            Sign In
-          </button>
-          <button className="bg-orange-700 text-white px-6 py-2 rounded-md hover:bg-blue-800 transition font-medium text-lg">
-            Sign Up
-          </button>
-        </div>
-      </div>
+
+
+{/* Sign In / Sign Up Buttons */}
+<div className="absolute top-6 right-6 md:top-4 md:right-12 flex items-center space-x-4 z-10">
+  <div className="flex items-center space-x-4">
+    <a href="#"><button className="bg-orange-700 text-white px-6 py-2 rounded-[10px] hover:bg-blue-900 transition font-medium text-xl">
+      Sign In
+    </button> </a>
+   <a href="#"><button className="bg-orange-700 text-white px-6 py-2 rounded-[10px] hover:bg-blue-900 transition font-medium text-xl">
+      Sign Up
+    </button> </a>
+  </div>
+</div>
+
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center h-full pt-20 sm:pt-0">
@@ -139,7 +105,7 @@ const Hero = () => {
           <p className="text-gray-300 mb-8 text-2xl font-sans font-bold">
             MTN, Glo, Airtel, 9Mobile, DStv, GOtv, Startimes, PHCN, PHED, IKEDC, EKEDC etc.
           </p>
-          <button className="bg-orange-700 text-white px-8 py-3 rounded-md hover:bg-blue-800 transition">
+          <button className="bg-orange-700 text-white px-8 py-3 rounded-[10px] hover:bg-blue-900 transition text-xl">
             Get Started
           </button>
         </div>
@@ -151,11 +117,6 @@ const Hero = () => {
             className="rounded-3xl"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent rounded-lg"></div>
-		  
-
-
-
-
         </div>
       </div>
     </div>
@@ -163,3 +124,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+

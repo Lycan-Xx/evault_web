@@ -9,8 +9,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12">
           <div>
-            <h3 className="text-2xl font-bold mb-4">eVault</h3>
-            <p className="text-gray-300 mb-4">
+            <h3 className="text-2xl font-extrabold  mb-4">eVault</h3>
+            <p className="text-gray-300 mb-4 font-mono">
               Evault offers the best and most secure way to recharge data, airtime, cable and more at the best prices with instant delivery.
             </p>
             <div className="flex space-x-4">
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Explore</h4>
+            <h4 className="font-extrabold mb-4">Explore</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-300 hover:text-orange-500">Home</a></li>
               <li><a href="#" className="text-gray-300 hover:text-orange-500">About</a></li>
@@ -31,8 +31,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-300">
+            <h4 className="font-extrabold mb-4">Services</h4>
+            <ul className="space-y-2 text-gray-300 font-sans">
               <li>Airtime TopUp</li>
               <li>Exam Pin</li>
               <li>Buy Data</li>
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h4 className="font-extrabold mb-4">Contact</h4>
             
             <ul className="space-y-2 text-gray-300">
                 <li><a href="#"><FaPhone /> +234 000000000</a></li>
