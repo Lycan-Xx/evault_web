@@ -1,5 +1,7 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram } from 'lucide-react';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { BsTwitterX } from 'react-icons/bs';
 
 const Footer = () => {
   return (
@@ -13,7 +15,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Facebook className="w-6 h-6 cursor-pointer hover:text-orange-500" />
-              <Twitter className="w-6 h-6 cursor-pointer hover:text-orange-500" />
+              < BsTwitterX className="w-6 h-6 cursor-pointer hover:text-orange-500" />
               <Instagram className="w-6 h-6 cursor-pointer hover:text-orange-500" />
             </div>
           </div>
@@ -29,22 +31,26 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#">📞 +234 000000000</a></li>
-              <li><a href="#">✉️ support@evault.com.ng</a></li>
-              <li>🏢 No 29 Atiku Abubakar Mall, Numan road, Adamawa State, NG</li>
+              <li>Airtime TopUp</li>
+              <li>Exam Pin</li>
+              <li>Buy Data</li>
+			  <li>Cable Subscription</li>
+			  <li>Electricity Bill</li>
+			  <li>Bulk SMS</li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Hours of Operation</h4>
+            <h4 className="font-semibold mb-4">Contact</h4>
+            
             <ul className="space-y-2 text-gray-300">
-              <li>Monday - Friday: 24/7</li>
-              <li>Saturday: 24/7</li>
-              <li>Sunday: 24/7</li>
+                <li><a href="#"><FaPhone /> +234 000000000</a></li>
+                <li><a href="#"><FaEnvelope /> support@evault.com.ng</a></li>
+                <li><FaMapMarkerAlt /> No 29 Atiku Abubakar Mall, Numan road, Adamawa State, NG</li>
             </ul>
-          </div>
+        </div>
         </div>
         
 		<div className='border-t border-gray-700 mt-12 pt-8 text-gray-300 flex justify-between items-center'>

@@ -1,13 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const Hero = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+      setDropdownOpen(false); // Close dropdown after selecting an item
     }
   };
 
@@ -26,17 +27,58 @@ const Hero = () => {
           >
             About
           </a>
-          <a 
-            href="#services" 
-            className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('services');
-            }}
-          >
-            Services
-          </a>
-          <a 
+
+
+          <div className="relative" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
+            <button 
+              className="text-white hover:text-orange-500 transition-colors duration-500 text-xl font-extrabold flex items-center"
+              onClick={() => setDropdownOpen(!dropdownOpen)} // Toggle dropdown on click
+            >
+              <span>Services</span>
+              {dropdownOpen ? (
+                <FaChevronUp className="ml-1 icon-size" />
+              ) : (
+                <FaChevronDown className="ml-1 icon-size" />
+              )}
+            </button>
+            {dropdownOpen && (
+              <div 
+                className="absolute left-0 mt-2 w-40 bg-white rounded-md shadow-lg z-10"
+                onMouseEnter={() => setDropdownOpen(true)} // Keep dropdown open when mouse is over it
+              >
+                <ul className="py-2">
+                  <li 
+                    className="px-4 py-2 text-gray-800 hover:bg-gray-200 cursor-pointer" 
+                    onClick={() => scrollToSection('boy')}
+                  >
+                    Boy
+                  </li>
+                  <li 
+                    className="px-4 py-2 text-gray-800 hover:bg-gray-200 cursor-pointer" 
+                    onClick={() => scrollToSection('girl')}
+                  >
+                    Girl
+                  </li>
+                  <li 
+                    className="px-4 py-2 text-gray-800 hover:bg-gray-200 cursor-pointer" 
+                    onClick={() => scrollToSection('man')}
+                  >
+                    Man
+                  </li>
+                  <li 
+                    className="px-4 py-2 text-gray-800 hover:bg-gray-200 cursor-pointer" 
+                    onClick={() => scrollToSection('woman')}
+                  >
+                    Woman
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+
+
+
+		  <a 
             href="#faq" 
             className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
             onClick={(e) => {
@@ -73,9 +115,11 @@ const Hero = () => {
         <h1>eVault</h1>
       </div>
 
+	  
       {/* Sign In / Sign Up Buttons */}
       <div className="absolute top-6 right-6 md:top-4 md:right-12 flex items-center space-x-4 z-10">
         <div className="flex items-center space-x-4">
+          
           <button className="bg-orange-700 text-white px-6 py-2 rounded-md hover:bg-blue-800 transition font-medium text-lg">
             Sign In
           </button>
@@ -107,6 +151,11 @@ const Hero = () => {
             className="rounded-3xl"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent rounded-lg"></div>
+		  
+
+
+
+
         </div>
       </div>
     </div>
