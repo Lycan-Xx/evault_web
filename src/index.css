@@ -24,5 +24,6 @@ body {
 }
 
 .icon-size {
-  font-size: 1px;
+  font-size: 12px;
+  padding: 24px;
 }

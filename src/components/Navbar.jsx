@@ -98,9 +98,89 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="text-white text-3xl font-bold">eVault</div>
 
+
+
+
         {/* Desktop Navigation (previous code remains the same) */}
 
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
+          <a
+            href="#"
+            className="text-white hover:text-orange-700 text-xl font-bold"
+            onClick={() => scrollToSection("About")}
+          >
+            About
+          </a>
+
+          <div className="relative">
+            <div 
+              className="flex items-center text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold cursor-pointer"
+              onClick={toggleServicesDropdown}
+            >
+              Services
+              <ChevronDownIcon 
+                className={`w-5 h-5 ml-2 transition-transform duration-300 ${
+                  servicesDropdownOpen ? 'rotate-180' : ''
+                }`} 
+              />
+            </div>
+            
+            {servicesDropdownOpen && (
+              <div 
+                className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg overflow-hidden z-50 min-w-[150px]"
+              >
+                {/* Services dropdown items */}
+                {['Airtime Top Up', 'Exams Pin', 'Buy Data', 'Cable Subscriptions', 'Electricity Bill', 'Bulk SMS'].map((service, index) => (
+                  <a 
+                    key={index}
+                    href={`#${service.toLowerCase().replace(/\s+/g, '-')}-services`}
+                    className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(`${service.toLowerCase().replace(/\s+/g, '-')}-services`);
+                      setServicesDropdownOpen(false);
+                    }}
+                  >
+                    {service}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <a
+            href="#"
+            className="text-white hover:text-orange-700 text-xl font-bold"
+            onClick={() => scrollToSection("FAQ")}
+          >
+            FAQ
+          </a>
+          <a
+            href="#"
+            className="text-white hover:text-orange-700 text-xl font-bold"
+            onClick={() => scrollToSection("Contact")}
+          >
+            Contact
+          </a>
+        </div>
+
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex items-center space-x-4 z-10">
+          <button className="bg-orange-700 text-white px-6 py-2 rounded-md hover:bg-orange-600 font-medium text-lg">
+            Sign In
+          </button>
+          <button className="bg-orange-700 text-white px-6 py-2 rounded-md hover:bg-orange-600 font-medium text-lg">
+            Sign up
+          </button>
+        </div>
+
         {/* Mobile Hamburger Button with Animated Transition */}
+
+
+
+
         <div className="md:hidden">
           <motion.button 
             onClick={toggleMobileMenu}
