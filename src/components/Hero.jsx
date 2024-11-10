@@ -31,7 +31,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative px-6 md:px-16 py-20 h-screen bg-[url('./src/components/assets/hero-image.jpg')] bg-cover bg-center">
+    <div className="relative px-6 md:px-16 py-10 sm:py-20 lg:py-20 min-h-screen bg-[url('./src/components/assets/hero-image.jpg')] bg-cover bg-center flex-col justify-center">
       {/* Navigation */}
       <div className='absolute top-6 left-3 right-3 hidden justify-center space-x-8 md:visible md:flex'>
         {/* About Link */}
@@ -173,7 +173,7 @@ const Hero = () => {
       </div>
 
       {/* Title */}
-      <div className="text-4xl text-white font-bold pl-2 absolute top-6 left-[100px]">
+      <div className="text-4xl text-white font-bold pl-2 absolute top-6 left-[100px] hidden md:visible md:flex">
         <h1>eVault</h1>
       </div>
 
