@@ -40,7 +40,7 @@ const About = () => {
   }
 
   return (
-    <section className="bg-gray-200 py-16 px-6 md:px-12">
+    <section id='about' className="bg-gray-200 py-16 px-6 md:px-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         {/* Left Side - Company Description */}
         <div className="md:w-1/2 mb-8 md:mr-12">
