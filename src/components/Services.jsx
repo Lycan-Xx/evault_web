@@ -4,17 +4,17 @@ import { Smartphone, Signal, Wifi, Tv, Zap, Mail } from 'lucide-react';
 const services = [
   {
     icon: <Smartphone className="w-12 h-20 text-orange-500" />,
-    title: 'Airtime TopUp',
+    title: 'Airtime Top Up',
     description: 'Making an online recharge has become very easy and safe on our platform.'
   },
   {
     icon: <Signal className="w-12 h-20 text-purple-500" />,
-    title: 'Result Checker',
+    title: 'Exams Pin',
     description: 'Check your exam results instantly with our secure verification system.'
   },
   {
     icon: <Wifi className="w-12 h-20 text-teal-500" />,
-    title: 'BUY DATA',
+    title: 'Buy Data',
     description: 'Get the best data plans for all networks at the most competitive prices.'
   },
   {
@@ -24,7 +24,7 @@ const services = [
   },
   {
     icon: <Zap className="w-12 h-20 text-yellow-500" />,
-    title: 'UTILITY BILLS PAYMENT',
+    title: 'Utility Bills Payment',
     description: 'Because we understand your needs, we make bill payments seamless.'
   },
   {

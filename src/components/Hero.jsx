@@ -106,7 +106,7 @@ const Hero = () => {
                   setServicesDropdownOpen(false);
                 }}
               >
-                Cable Subscriptions
+                Cable Subscription
               </a>
               <a 
                 href="#electricity-bill-services" 
@@ -117,7 +117,7 @@ const Hero = () => {
                   setServicesDropdownOpen(false);
                 }}
               >
-                Electricity Bill
+                Utility Bills Payment
               </a>
               <a 
                 href="#bulk-sms-services" 

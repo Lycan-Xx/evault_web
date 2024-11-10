@@ -10,12 +10,12 @@ const features = [
   {
     icon: <Shield className="w-12 h-12 text-purple-500" />,
     title: 'We Are Reliable',
-    description: 'Safe and reliable in our services. Over 100% satisfaction for our subscribers we are.'
+    description: 'Safe and reliable in our services. Over 100% satisfaction for our subscribers.'
   },
   {
     icon: <HeadphonesIcon className="w-12 h-12 text-teal-500" />,
     title: '24/7 Customer Support',
-    description: 'Our customer care support is always available satisfying them is our topmost priority.'
+    description: 'Our customer care support is always available, satisfying our customers is our topmost priority.'
   }
 ];
 

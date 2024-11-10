@@ -8,14 +8,14 @@ const About = () => {
     {
       id: 1,
       icon: <FaQuestionCircle />,
-      question: "Signing In",
+      question: "Getting Started",
       answer: "Firstly you need to create an account and sign in using your registered username & password",
       color: 'blue'
     },
     {
       id: 2,
       icon: <FaNetworkWired />,
-      question: "Fund Wallet",
+      question: "What We Offer",
       answer: "We support airtime conversion for all major Nigerian networks, including MTN, Glo, Airtel, and 9Mobile. Our platform ensures quick and hassle-free conversion across these networks.",
       color: 'green'
     },

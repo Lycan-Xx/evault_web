@@ -112,7 +112,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-white text-3xl font-bold">eVault</div>
+        <div className="text-white text-3xl font-bold"><a href="#">eVault</a></div>
 
        {/* Desktop Navigation */}
        <div className="hidden md:flex space-x-8">
@@ -142,7 +142,7 @@ const Navbar = () => {
               className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg overflow-hidden z-50 min-w-[150px] whitespace-nowrap"
             >
               {/* Services dropdown items */}
-              {['Airtime Top Up', 'Exams Pin', 'Buy Data', 'Cable Subscriptions', 'Electricity Bill', 'Bulk SMS'].map((service, index) => (
+              {['Airtime Top Up', 'Exams Pin', 'Buy Data', 'Cable Subscription', 'Utility Bills Payment', 'Bulk SMS'].map((service, index) => (
                 <a 
                   key={index}
                   href={`#${service.toLowerCase().replace(/\s+/g, '-')}-services`}
