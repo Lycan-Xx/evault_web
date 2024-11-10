@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { ChevronDownIcon } from '@heroicons/react/24/solid'; // Assuming you're using Heroicons
+import React, { useState, useRef, useEffect } from 'react';
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
 const Hero = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -12,9 +13,28 @@ const Hero = () => {
     }
   };
 
+  const toggleServicesDropdown = () => {
+    setServicesDropdownOpen(!servicesDropdownOpen);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setServicesDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="relative px-6 md:px-16 py-20 h-screen bg-[url('./src/components/assets/hero-image.jpg')] bg-cover bg-center">
-      <div className='absolute top-6 left-3 right-3 flex justify-center space-x-8'>
+      {/* Navigation */}
+      <div className='absolute top-6 left-3 right-3 hidden justify-center space-x-8 md:visible md:flex'>
+        {/* About Link */}
         <a 
           href="#about" 
           className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
@@ -27,12 +47,11 @@ const Hero = () => {
         </a>
         
         {/* Services Dropdown */}
-        <div 
-          className="relative group"
-          onMouseEnter={() => setServicesDropdownOpen(true)}
-          onMouseLeave={() => setServicesDropdownOpen(false)}
-        >
-          <div className="flex items-center text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold cursor-pointer">
+        <div className="relative" ref={dropdownRef}>
+          <div 
+            className="flex items-center text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold cursor-pointer"
+            onClick={toggleServicesDropdown}
+          >
             Services
             <ChevronDownIcon 
               className={`w-5 h-5 ml-2 transition-transform duration-300 ${
@@ -42,44 +61,80 @@ const Hero = () => {
           </div>
           
           {servicesDropdownOpen && (
-            <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg overflow-hidden z-50 min-w-[150px]">
+            <div 
+              className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg overflow-hidden z-50 min-w-[150px]"
+            >
               <a 
-                href="#men-services" 
+                href="#airtime-services" 
                 className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('men-services');
+                  scrollToSection('airtime-services');
                   setServicesDropdownOpen(false);
                 }}
               >
-                Men
+                Airtime Top Up
               </a>
               <a 
-                href="#women-services" 
+                href="#exams-pin-services" 
                 className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('women-services');
+                  scrollToSection('exams-pin-services');
                   setServicesDropdownOpen(false);
                 }}
               >
-                Women
+                Exams Pin
               </a>
               <a 
-                href="#children-services" 
+                href="#buy-data-services" 
                 className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('children-services');
+                  scrollToSection('buy-data-services');
                   setServicesDropdownOpen(false);
                 }}
               >
-                Children
+                Buy Data
+              </a>
+              <a 
+                href="#cable-subscription-services" 
+                className="block px-4 py-2 whitespace-nowrap text-gray-800 hover:bg-orange-100 transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('cable-subscription-services');
+                  setServicesDropdownOpen(false);
+                }}
+              >
+                Cable Subscriptions
+              </a>
+              <a 
+                href="#electricity-bill-services" 
+                className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('electricity-bill-services');
+                  setServicesDropdownOpen(false);
+                }}
+              >
+                Electricity Bill
+              </a>
+              <a 
+                href="#bulk-sms-services" 
+                className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('bulk-sms-services');
+                  setServicesDropdownOpen(false);
+                }}
+              >
+                Bulk SMS
               </a>
             </div>
           )}
         </div>
 
+        {/* FAQ Link */}
         <a 
           href="#faq" 
           className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
@@ -90,6 +145,8 @@ const Hero = () => {
         >
           FAQ
         </a>
+
+        {/* Contact Link */}
         <a 
           href="#contact" 
           className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
@@ -102,10 +159,12 @@ const Hero = () => {
         </a>
       </div>
 
-      {/* Rest of the existing code remains the same */}
+      {/* Rest of the code remains the same as in the previous version */}
+      {/* ... (previous code continues) ... */}
 
-	   {/* Logo */}
-	   <div className="absolute top-0 left-0 sm:top-0 sm:left-0">
+
+      {/* Logo */}
+      <div className="absolute top-0 left-0 sm:top-0 sm:left-0">
         <img 
           src="./src/components/assets/evault_main_logo.png" 
           alt="logo" 
@@ -118,20 +177,21 @@ const Hero = () => {
         <h1>eVault</h1>
       </div>
 
-
-
-{/* Sign In / Sign Up Buttons */}
-<div className="absolute top-6 right-6 md:top-4 md:right-12 flex items-center space-x-4 z-10">
-  <div className="flex items-center space-x-4">
-    <a href="#"><button className="bg-orange-700 text-white px-6 py-2 rounded-[10px] hover:bg-blue-900 transition font-medium text-xl">
-      Sign In
-    </button> </a>
-   <a href="#"><button className="bg-orange-700 text-white px-6 py-2 rounded-[10px] hover:bg-blue-900 transition font-medium text-xl">
-      Sign Up
-    </button> </a>
-  </div>
-</div>
-
+      {/* Sign In / Sign Up Buttons */}
+      <div className="absolute top-6 right-6 md:top-4 md:right-12 flex items-center space-x-4 z-10">
+        <div className="flex items-center space-x-4">
+          <a href="#">
+            <button className="bg-orange-700 text-white px-6 py-2 rounded-[10px] hover:bg-blue-900 transition font-medium text-xl">
+              Sign In
+            </button>
+          </a>
+          <a href="#">
+            <button className="bg-orange-700 text-white px-6 py-2 rounded-[10px] hover:bg-blue-900 transition font-medium text-xl">
+              Sign Up
+            </button>
+          </a>
+        </div>
+      </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center h-full pt-20 sm:pt-0">
@@ -157,6 +217,8 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent rounded-lg"></div>
         </div>
       </div>
+
+
     </div>
   );
 };

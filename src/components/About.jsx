@@ -62,7 +62,7 @@ const About = () => {
           {faqItems.map((item) => (
             <div 
               key={item.id} 
-              className="border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+              className="border border-gray-200 bg-white rounded-lg shadow-sm overflow-hidden"
             >
               <button 
                 onClick={() => toggleDropdown(item.id)}
