@@ -1,8 +1,9 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { ChevronDownIcon } from '@heroicons/react/24/solid'; // Assuming you're using Heroicons
 
 const Hero = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -13,61 +14,98 @@ const Hero = () => {
 
   return (
     <div className="relative px-6 md:px-16 py-20 h-screen bg-[url('./src/components/assets/hero-image.jpg')] bg-cover bg-center">
-      {/* Navigation Links */}
-      <div className="absolute top-6 left-0 right-0 z-20">
-        <div className="flex justify-center space-x-8">
-          </div>
-		  </div>
-
-
-<div className='absolute top-6 left-3 right-3 flex justify-center space-x-8'>
- 
-		  <a 
-            href="#about" 
-            className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('about');
-            }}
-          >
-            About
-          </a>
-          <a 
-            href="#services" 
-            className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('services');
-            }}
-          >
+      <div className='absolute top-6 left-3 right-3 flex justify-center space-x-8'>
+        <a 
+          href="#about" 
+          className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('about');
+          }}
+        >
+          About
+        </a>
+        
+        {/* Services Dropdown */}
+        <div 
+          className="relative group"
+          onMouseEnter={() => setServicesDropdownOpen(true)}
+          onMouseLeave={() => setServicesDropdownOpen(false)}
+        >
+          <div className="flex items-center text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold cursor-pointer">
             Services
-          </a>
-          <a 
-            href="#faq" 
-            className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('faq');
-            }}
-          >
-            FAQ
-          </a>
-          <a 
-            href="#contact" 
-            className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('contact');
-            }}
-          >
-            Contact
-          </a>
-    
+            <ChevronDownIcon 
+              className={`w-5 h-5 ml-2 transition-transform duration-300 ${
+                servicesDropdownOpen ? 'rotate-180' : ''
+              }`} 
+            />
+          </div>
+          
+          {servicesDropdownOpen && (
+            <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg overflow-hidden z-50 min-w-[150px]">
+              <a 
+                href="#men-services" 
+                className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('men-services');
+                  setServicesDropdownOpen(false);
+                }}
+              >
+                Men
+              </a>
+              <a 
+                href="#women-services" 
+                className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('women-services');
+                  setServicesDropdownOpen(false);
+                }}
+              >
+                Women
+              </a>
+              <a 
+                href="#children-services" 
+                className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('children-services');
+                  setServicesDropdownOpen(false);
+                }}
+              >
+                Children
+              </a>
+            </div>
+          )}
+        </div>
 
-	   
-</div>
-      {/* Logo */}
-      <div className="absolute top-0 left-0 sm:top-0 sm:left-0">
+        <a 
+          href="#faq" 
+          className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('faq');
+          }}
+        >
+          FAQ
+        </a>
+        <a 
+          href="#contact" 
+          className="text-white hover:text-orange-500 transition-colors duration-300 text-xl font-extrabold"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('contact');
+          }}
+        >
+          Contact
+        </a>
+      </div>
+
+      {/* Rest of the existing code remains the same */}
+
+	   {/* Logo */}
+	   <div className="absolute top-0 left-0 sm:top-0 sm:left-0">
         <img 
           src="./src/components/assets/evault_main_logo.png" 
           alt="logo" 
@@ -124,5 +162,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-
