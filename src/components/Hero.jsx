@@ -110,7 +110,7 @@ const Hero = () => {
               </a>
               <a 
                 href="#electricity-bill-services" 
-                className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors"
+                className="block px-4 py-2 text-gray-800 hover:bg-orange-100 transition-colors whitespace-nowrap"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('electricity-bill-services');
