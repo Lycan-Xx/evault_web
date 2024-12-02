@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
-const Hero = () => {
+const Hero = ({ language }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -23,6 +23,17 @@ const Hero = () => {
     }
   };
 
+  const content = {
+    English:
+      'Welcome to eVault, At eVault, we believe in empowering individuals and businesses with secure and accessible financial solutions.',
+    Hausa:
+      'Maraba da eVault, A eVault, muna da yakinin cewa muna bai wa mutane da kasuwanci damar samun hanyoyin kudi masu aminci da saukin samu.',
+    Igbo:
+      'Nnọọ na eVault. Na eVault, anyị kwenyere n’inyere ndị mmadụ na azụmaahịa ikike iji nweta ihe ngwọta ego dị nchebe ma dị mfe.',
+    Yoruba:
+      'Kaabo si eVault. Ni eVault, a gbagbọ ninu agbara eniyan ati awọn iṣowo pẹlu awọn solusan inawo ti o ni aabo ati ti o rọrun lati wọle si.',
+  };
+
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
@@ -31,7 +42,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative px-6 md:px-16 py-10 sm:py-20 lg:py-20 min-h-screen bg-[url('./src/components/assets/hero-image.jpg')] bg-cover bg-center flex-col justify-center">
+    <div className="relative px-6 md:px-16 py-10 sm:py-20 lg:py-20 min-h-screen bg-cover bg-center flex-col justify-center"
+		  style={{ backgroundImage: "url('./src/components/assets/hero-image.jpg')" }}>
       {/* Navigation */}
       <div className='absolute top-6 left-3 right-3 hidden justify-center space-x-8 md:visible md:flex'>
         {/* About Link */}
@@ -159,8 +171,6 @@ const Hero = () => {
         </a>
       </div>
 
-      {/* Rest of the code remains the same as in the previous version */}
-      {/* ... (previous code continues) ... */}
 
 
       {/* Logo */}
@@ -193,16 +203,24 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center h-full pt-20 sm:pt-0">
         <div className="space-y-4">
-          <span className="text-orange-500 font-semibold text-2xl block">WE ARE</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">
-            The Best In Online Recharge & Subscriptions
-          </h1>
-          <p className="text-gray-300 mb-8 text-2xl font-sans font-bold">
-            MTN, Glo, Airtel, 9Mobile, DStv, GOtv, Startimes, PHCN, PHED, IKEDC, EKEDC etc.
-          </p>
+
+
+              {/* Main Content */}
+
+              <div className="text-center md:text-left max-w-3xl mx-auto">
+        <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          {content[language]}
+        </h1>
+        <button className="bg-orange-700 text-white px-8 py-3 rounded-lg hover:bg-blue-900 transition text-lg">
+          Get Started
+        </button>
+      </div>
+
+
+
+
           <button className="bg-orange-700 text-white px-8 py-3 rounded-[10px] hover:bg-blue-900 transition text-xl">
             Get Started
           </button>

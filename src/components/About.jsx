@@ -1,8 +1,19 @@
 import React, { useState } from 'react'
 import { FaChevronDown, FaChevronUp, FaQuestionCircle, FaNetworkWired, FaMobileAlt, FaCreditCard } from 'react-icons/fa'
 
-const About = () => {
+const About = ({ language }) => {
   const [activeDropdown, setActiveDropdown] = useState(null)
+
+  const content = {
+    English:
+      'At eVault, we believe in empowering individuals and businesses by providing them with the financial tools they need to succeed. Our mission is to create an inclusive and accessible financial ecosystem.',
+    Hausa:
+      'A eVault, muna da yakinin cewa muna bai wa mutane da kasuwanci damar samun hanyoyin kudi masu aminci da saukin samu.',
+    Igbo:
+      'Na eVault, anyị kwenyere n’inyere ndị mmadụ na azụmaahịa ikike iji nweta ihe ngwọta ego dị nchebe ma dị mfe.',
+    Yoruba:
+      'Ni eVault, a gbagbọ ninu agbara eniyan ati awọn iṣowo pẹlu awọn solusan inawo ti o ni aabo ati ti o rọrun lati wọle si.',
+  };
 
   const faqItems = [
     {
@@ -40,21 +51,24 @@ const About = () => {
   }
 
   return (
-    <section id='about' className="bg-gray-200 py-16 px-6 md:px-12">
-      <div className="container mx-auto flex flex-col md:flex-row items-center">
-        {/* Left Side - Company Description */}
+    <section id="about" className="bg-gray-200 py-16 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+              {/* Left Side - Company Description */}
         <div className="md:w-1/2 mb-8 md:mr-12">
           <h2 className="text-4xl font-bold text-black mb-6">
-            <span className='text-orange-500'>About</span> Evault
+            <span className="text-orange-500">About</span> eVault
           </h2>
-          <p className="text-gray-600 mb-6 text-[1.2rem]">
-            Evault is a leading provider of Voice, Data, and Home Broadband services. 
-            We partner with local telcos to offer customizable plans with additional features 
-            that meet your unique communication needs.
-          </p>
-          <button className="bg-orange-600 text-[1.2rem] text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">
+          <p className="text-gray-600 text-lg leading-relaxed">{content[language]}</p>
+          <button className="mt-6 bg-orange-600 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition text-lg">
             Learn More
           </button>
+        </div>
+        <div className="md:w-1/2">
+          <img
+            src="https://picsum.photos/600/400?random=3"
+            alt="About Us"
+            className="rounded-lg shadow-lg"
+          />
         </div>
 
         {/* Right Side - FAQ Dropdowns */}
@@ -106,40 +120,3 @@ const About = () => {
 }
 
 export default About
-
-
-// import React from 'react'
-
-// const About = () => {
-//   return (
-//     <section className="bg-white py-16 px-6 md:px-12 rounded-t-2xl">
-//       <div className="container mx-auto flex flex-col md:flex-row items-center">
-//         <div className="md:w-1/2 mb-8 md:mr-12">
-//           <h2 className="text-3xl font-bold text-blue-900 mb-6">
-//             About DATAVENDOR
-//           </h2>
-//           <p className="text-gray-700 mb-6">
-//             DATAVENDOR is a leading provider of Voice, Data, and Home Broadband services. 
-//             We partner with local telcos to offer customizable plans with additional features 
-//             that meet your unique communication needs.
-//           </p>
-//           <button className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">
-//             Learn More
-//           </button>
-//         </div>
-//         <div className="md:w-1/2">
-//           <img 
-//             src="https://picsum.photos/600/400?random=2" 
-//             alt="DATAVENDOR Services" 
-//             className="rounded-lg shadow-lg"
-//           />
-
-//           <div></div>
-
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default About
