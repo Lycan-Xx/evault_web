@@ -37,79 +37,74 @@ const Offer = ({ language }) => {
       },
     ],
     Igbo: [
-        {
-          title: 'Inweta Ego N’oge Ọ bụla',
-          description:
-            'Anyị na-eme ka ọ bụrụ na onye ọ bụla nwere ohere iji nweta ọrụ ego nke oge a.',
-        },
-        {
-          title: 'Ego Nchekwa na Nchebe',
-          description:
-            'Anyị na-elekwasị anya n’inye ọrụ dị nchebe na nke a pụrụ ịdabere na ya.',
-        },
-        {
-          title: 'Omenala Ịma Egwuregwu',
-          description:
-            'Anyị na-agbaso imepụta na mmezi ngwa ọrụ akụ na ụba.',
-        },
-      ],
-      Yoruba: [
-        {
-          title: 'Ibi-afẹde Ti Inawo Fun Gbogbo eniyan',
-          description:
-            'A rii daju pe gbogbo eniyan ni anfaani lati wọle si awọn iṣẹ inawo igbalode.',
-        },
-        {
-          title: 'Awọn iṣẹ To Duroṣinṣin ati To Lọrẹ',
-          description:
-            'A nṣe itọsọna lori gbigbe awọn iṣẹ inawo ti o dara julọ ati ti o tọ.',
-        },
-        {
-          title: 'Iriri inawo Titun',
-          description:
-            'A n ṣafihan ọna tuntun ati ilọsiwaju bi a ṣe n ṣiṣẹda ati dagba awọn owo rẹ.',
-        },
-      ],
-    // End of translations - Add more languages here
+      {
+        title: 'Inweta Ego N’oge Ọ bụla',
+        description:
+          'Anyị na-eme ka ọ bụrụ na onye ọ bụla nwere ohere iji nweta ọrụ ego nke oge a.',
+      },
+      {
+        title: 'Ego Nchekwa na Nchebe',
+        description:
+          'Anyị na-elekwasị anya n’inye ọrụ dị nchebe na nke a pụrụ ịdabere na ya.',
+      },
+      {
+        title: 'Omenala Ịma Egwuregwu',
+        description:
+          'Anyị na-agbaso imepụta na mmezi ngwa ọrụ akụ na ụba.',
+      },
+    ],
+    Yoruba: [
+      {
+        title: 'Ibi-afẹde Ti Inawo Fun Gbogbo eniyan',
+        description:
+          'A rii daju pe gbogbo eniyan ni anfaani lati wọle si awọn iṣẹ inawo igbalode.',
+      },
+      {
+        title: 'Awọn iṣẹ To Duroṣinṣin ati To Lọrẹ',
+        description:
+          'A nṣe itọsọna lori gbigbe awọn iṣẹ inawo ti o dara julọ ati ti o tọ.',
+      },
+      {
+        title: 'Iriri inawo Titun',
+        description:
+          'A n ṣafihan ọna tuntun ati ilọsiwaju bi a ṣe n ṣiṣẹda ati dagba awọn owo rẹ.',
+      },
+    ],
   };
 
   return (
-    <section className="bg-gray-300 py-16 px-6 md:px-12 rounded-t-2xl">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8">
+    <section
+      className="relative bg-cover opacity-90 bg-center bg-no-repeat text-white py-16 px-6 md:px-12 rounded-t-2xl"
+      style={{
+        backgroundImage: `url('https://picsum.photos/1920/1080?random=2')`,
+        filter: 'blur(0px)',
+        WebkitBackdropFilter: 'blur(0px)', // Safari support
+        backdropFilter: 'blur(px)',
+      }}
+    >
+      <div className="relative max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-[3.4rem] font-bold text-blue-800 mb-8">
           What We Offer
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {content[language].map((offer, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+            <div
+              key={index}
+              className="bg-white/90 p-6 rounded-lg shadow-md text-black"
+            >
               <h3 className="text-xl font-bold text-orange-500 mb-4">
                 {offer.title}
               </h3>
               <p className="text-gray-700">{offer.description}</p>
             </div>
           ))}
-
-
-
-
-
-          <button className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">
-            Learn More
-          </button>
         </div>
-        <div className="md:w-1/2">
-          <img 
-            src="https://picsum.photos/600/400?random=2" 
-            alt="DATAVENDOR Services" 
-            className="rounded-lg shadow-lg"
-          />
-
-          <div></div>
-
-        </div>
+        <button className="mt-8 bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">
+          Learn More
+        </button>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Offer
+export default Offer;

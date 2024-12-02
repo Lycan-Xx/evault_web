@@ -108,7 +108,7 @@ const Footer = ({ setLanguage }) => {
               </button>
               {/* Language Drawer */}
               {isDrawerOpen && (
-                <div className="absolute top-full right-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg z-50 overflow-hidden">
+                <div className="absolute bottom-full right-0 mb-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg z-50 overflow-hidden">
                   <ul className="space-y-1">
                     <li>
                       <button

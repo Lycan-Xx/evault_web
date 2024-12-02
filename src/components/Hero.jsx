@@ -26,7 +26,7 @@ const Hero = ({ language }) => {
   const content = {
     English: (
       <>
-       <span className='text-[4rem]'>Welcome to</span>  <span className="text-orange-500">eVault</span>. <br/> At <span className="text-orange-500">eVault</span>, we believe in empowering individuals and businesses with secure and accessible financial solutions.
+        <p className='text-6xl' >Welcome to <span className="text-orange-500">eVault</span>.</p> <br />  At <span className="text-orange-500">eVault</span>, we believe in empowering individuals and businesses with <span className='text-green-400' >secure</span> and accessible financial solutions.
       </>
     ),
     Hausa: (
