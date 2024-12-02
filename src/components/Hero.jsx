@@ -24,15 +24,28 @@ const Hero = ({ language }) => {
   };
 
   const content = {
-    English:
-      'Welcome to eVault, At eVault, we believe in empowering individuals and businesses with secure and accessible financial solutions.',
-    Hausa:
-      'Maraba da eVault, A eVault, muna da yakinin cewa muna bai wa mutane da kasuwanci damar samun hanyoyin kudi masu aminci da saukin samu.',
-    Igbo:
-      'Nnọọ na eVault. Na eVault, anyị kwenyere n’inyere ndị mmadụ na azụmaahịa ikike iji nweta ihe ngwọta ego dị nchebe ma dị mfe.',
-    Yoruba:
-      'Kaabo si eVault. Ni eVault, a gbagbọ ninu agbara eniyan ati awọn iṣowo pẹlu awọn solusan inawo ti o ni aabo ati ti o rọrun lati wọle si.',
+    English: (
+      <>
+       <span className='text-[4rem]'>Welcome to</span>  <span className="text-orange-500">eVault</span>. <br/> At <span className="text-orange-500">eVault</span>, we believe in empowering individuals and businesses with secure and accessible financial solutions.
+      </>
+    ),
+    Hausa: (
+      <>
+        Maraba da <span className="text-orange-500">eVault</span>. A <span className="text-orange-500">eVault</span>, muna da yakinin cewa muna bai wa mutane da kasuwanci damar samun hanyoyin kudi masu aminci da saukin samu.
+      </>
+    ),
+    Igbo: (
+      <>
+        Nnọọ na <span className="text-orange-500">eVault</span>. Na <span className="text-orange-500">eVault</span>, anyị kwenyere n’inyere ndị mmadụ na azụmaahịa ikike iji nweta ihe ngwọta ego dị nchebe ma dị mfe.
+      </>
+    ),
+    Yoruba: (
+      <>
+        Kaabo si <span className="text-orange-500">eVault</span>. Ni <span className="text-orange-500">eVault</span>, a gbagbọ ninu agbara eniyan ati awọn iṣowo pẹlu awọn solusan inawo ti o ni aabo ati ti o rọrun lati wọle si.
+      </>
+    ),
   };
+  
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
@@ -203,31 +216,21 @@ const Hero = ({ language }) => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center h-full pt-20 sm:pt-0">
-        <div className="space-y-4">
-
-
-              {/* Main Content */}
-
-              <div className="text-center md:text-left max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-          {content[language]}
-        </h1>
-        <button className="bg-orange-700 text-white px-8 py-3 rounded-lg hover:bg-blue-900 transition text-lg">
-          Get Started
-        </button>
-      </div>
-
-
-
-
-          <button className="bg-orange-700 text-white px-8 py-3 rounded-[10px] hover:bg-blue-900 transition text-xl">
+     {/* Navigation and Other Elements */}
+	 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center h-full pt-20 sm:pt-0">
+        {/* Hero Text Section */}
+        <div className="space-y-6">
+          <div className="text-white text-4xl md:text-5xl font-bold tracking-tight leading-snug">
+            {content[language]}
+          </div>
+          <button className="bg-orange-700 text-white px-8 py-3 rounded-lg hover:bg-blue-900 transition text-lg">
             Get Started
           </button>
         </div>
 
+        {/* Hero Image */}
         <div className="relative">
-          <img 
+          <img
             src="./src/components/assets/smilling-image.jpg"
             alt="Woman using phone"
             className="rounded-3xl"
@@ -235,8 +238,6 @@ const Hero = ({ language }) => {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent rounded-lg"></div>
         </div>
       </div>
-
-
     </div>
   );
 };
