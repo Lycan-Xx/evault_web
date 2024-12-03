@@ -26,22 +26,22 @@ const Hero = ({ language }) => {
   const content = {
     English: (
       <>
-        <p className='text-6xl' >Welcome to <span className="text-orange-500">eVault</span>.</p> <br />  At <span className="text-orange-500">eVault</span>, we believe in empowering individuals and businesses with <span className='text-green-400' >secure</span> and accessible financial solutions.
+        <p className='custom-font text-6xl' >Welcome to <span className="text-orange-500">eVault</span>.</p> <br />  At <span className="text-orange-500">eVault</span>, we believe in empowering individuals and businesses with <span className='text-green-400' >secure</span> and accessible financial solutions.
       </>
     ),
     Hausa: (
       <>
-        Maraba da <span className="text-orange-500">eVault</span>. A <span className="text-orange-500">eVault</span>, muna da yakinin cewa muna bai wa mutane da kasuwanci damar samun hanyoyin kudi masu aminci da saukin samu.
+      	<p className='custom-font text-6xl'>  Maraba da <span className="text-orange-500">eVault</span>. </p> <br />  A <span className="text-orange-500">eVault</span>, muna da yakinin cewa muna bai wa mutane da kasuwanci damar samun hanyoyin kudi masu aminci da saukin samu.
       </>
     ),
     Igbo: (
       <>
-        Nnọọ na <span className="text-orange-500">eVault</span>. Na <span className="text-orange-500">eVault</span>, anyị kwenyere n’inyere ndị mmadụ na azụmaahịa ikike iji nweta ihe ngwọta ego dị nchebe ma dị mfe.
+      <p className='custom-font text-6xl'>  Nnọọ na <span className="text-orange-500">eVault</span>. </p> <br /> Na <span className="text-orange-500">eVault</span>, anyị kwenyere n’inyere ndị mmadụ na azụmaahịa ikike iji nweta ihe ngwọta ego dị nchebe ma dị mfe.
       </>
     ),
     Yoruba: (
       <>
-        Kaabo si <span className="text-orange-500">eVault</span>. Ni <span className="text-orange-500">eVault</span>, a gbagbọ ninu agbara eniyan ati awọn iṣowo pẹlu awọn solusan inawo ti o ni aabo ati ti o rọrun lati wọle si.
+      <p className='custom-font text-6xl'>  Kaabo si <span className="text-orange-500">eVault</span>. </p> <br /> Ni <span className="text-orange-500">eVault</span>, a gbagbọ ninu agbara eniyan ati awọn iṣowo pẹlu awọn solusan inawo ti o ni aabo ati ti o rọrun lati wọle si.
       </>
     ),
   };

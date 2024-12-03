@@ -5,14 +5,28 @@ const About = ({ language }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const content = {
-    English:
-      'At eVault, we believe in empowering individuals and businesses by providing them with the financial tools they need to succeed. Our mission is to create an inclusive and accessible financial ecosystem.',
-    Hausa:
-      'A eVault, muna da yakinin cewa muna bai wa mutane da kasuwanci damar samun hanyoyin kudi masu aminci da saukin samu.',
-    Igbo:
-      'Na eVault, anyị kwenyere n’inyere ndị mmadụ na azụmaahịa ikike iji nweta ihe ngwọta ego dị nchebe ma dị mfe.',
-    Yoruba:
-      'Ni eVault, a gbagbọ ninu agbara eniyan ati awọn iṣowo pẹlu awọn solusan inawo ti o ni aabo ati ti o rọrun lati wọle si.',
+    English: (
+      <>
+      <p className='text-black' > At eVault, we believe in empowering individuals and businesses by providing them with the financial tools they need to succeed. Our mission is to create an inclusive and accessible financial ecosystem.</p>
+      </>
+    ),
+    Hausa: (
+      <>
+      <p className='text-black'> A eVault, muna da yakinin cewa muna bai wa mutane da kasuwanci damar samun hanyoyin kudi masu aminci da saukin samu.</p>
+       </>
+    ),
+
+    Igbo: (
+      <>
+     <p className='text-black' > Na eVault, anyị kwenyere n’inyere ndị mmadụ na azụmaahịa ikike iji nweta ihe ngwọta ego dị nchebe ma dị mfe.</p>
+      </>
+    ),
+
+    Yoruba: (
+      <>
+     <p className='text-black' > Ni eVault, a gbagbọ ninu agbara eniyan ati awọn iṣowo pẹlu awọn solusan inawo ti o ni aabo ati ti o rọrun lati wọle si.</p>
+      </>
+    ),
   };
 
    const faqItems = [
