@@ -1,6 +1,15 @@
 import fs from 'fs'
 import path from 'path'
 
+const defaultConfigFiles = [
+  './tailwind.config.js',
+  './tailwind.config.cjs',
+  './tailwind.config.mjs',
+  './tailwind.config.ts',
+  './tailwind.config.cts',
+  './tailwind.config.mts',
+]
+
 function isObject(value) {
   return typeof value === 'object' && value !== null
 }
@@ -43,7 +52,11 @@ export default function resolveConfigPath(pathOrConfig) {
   }
 
   // require('tailwindcss')
-  for (const configFile of ['./tailwind.config.js', './tailwind.config.cjs']) {
+  return resolveDefaultConfigPath()
+}
+
+export function resolveDefaultConfigPath() {
+  for (const configFile of defaultConfigFiles) {
     try {
       const configPath = path.resolve(configFile)
       fs.accessSync(configPath)

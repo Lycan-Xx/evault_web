@@ -3,6 +3,8 @@ import parser from 'postcss-selector-parser'
 
 import { resolveMatches } from './generateRules'
 import escapeClassName from '../util/escapeClassName'
+import { applyImportantSelector } from '../util/applyImportantSelector'
+import { movePseudos } from '../util/pseudoElements'
 
 /** @typedef {Map<string, [any, import('postcss').Rule[]]>} ApplyCache */
 
@@ -430,6 +432,23 @@ function processApply(root, context, localCache) {
 
       let rules = applyClassCache.get(applyCandidate)
 
+      // Verify that we can apply the class
+      for (let [, rule] of rules) {
+        if (rule.type === 'atrule') {
+          continue
+        }
+
+        rule.walkRules(() => {
+          throw apply.error(
+            [
+              `The \`${applyCandidate}\` class cannot be used with \`@apply\` because \`@apply\` does not currently support nested CSS.`,
+              'Rewrite the selector without nesting or configure the `tailwindcss/nesting` plugin:',
+              'https://tailwindcss.com/docs/using-with-preprocessors#nesting',
+            ].join('\n')
+          )
+        })
+      }
+
       candidates.push([applyCandidate, important, rules])
     }
   }
@@ -551,16 +570,28 @@ function processApply(root, context, localCache) {
                 ? parent.selector.slice(importantSelector.length)
                 : parent.selector
 
+            // If the selector becomes empty after replacing the important selector
+            // This means that it's the same as the parent selector and we don't want to replace it
+            // Otherwise we'll crash
+            if (parentSelector === '') {
+              parentSelector = parent.selector
+            }
+
             rule.selector = replaceSelector(parentSelector, rule.selector, applyCandidate)
 
             // And then re-add it if it was removed
             if (importantSelector && parentSelector !== parent.selector) {
-              rule.selector = `${importantSelector} ${rule.selector}`
+              rule.selector = applyImportantSelector(rule.selector, importantSelector)
             }
 
             rule.walkDecls((d) => {
               d.important = meta.important || important
             })
+
+            // Move pseudo elements to the end of the selector (if necessary)
+            let selector = parser().astSync(rule.selector)
+            selector.each((sel) => movePseudos(sel))
+            rule.selector = selector.toString()
           })
         }
 

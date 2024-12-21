@@ -4,6 +4,8 @@ import log from './util/log'
 let defaults = {
   optimizeUniversalDefaults: false,
   generalizedModifiers: true,
+  disableColorOpacityUtilitiesByDefault: false,
+  relativeContentPathsByDefault: false,
 }
 
 let featureFlags = {
@@ -13,11 +15,7 @@ let featureFlags = {
     'disableColorOpacityUtilitiesByDefault',
     'relativeContentPathsByDefault',
   ],
-  experimental: [
-    'optimizeUniversalDefaults',
-    'generalizedModifiers',
-    // 'variantGrouping',
-  ],
+  experimental: ['optimizeUniversalDefaults', 'generalizedModifiers'],
 }
 
 export function flagEnabled(config, flag) {
