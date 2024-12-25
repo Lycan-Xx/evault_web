@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // Add this import
 
-const Offer = ({ language = "English" }) => {
+const Offer = ({ language = "English", setShowPlatform }) => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true }); // Trigger animation only once
+  const navigate = useNavigate(); // Add this hook
 
   const translations = {
     English: {
@@ -150,7 +152,10 @@ const Offer = ({ language = "English" }) => {
           ))}
         </div>
         <div className="text-center">
-          <button className="mt-8 bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">
+          <button 
+            onClick={() => setShowPlatform(true)}
+            className="mt-8 bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition"
+          >
             {currentTranslation.learnMore}
           </button>
         </div>

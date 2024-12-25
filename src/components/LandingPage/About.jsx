@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { FaChevronDown, FaChevronUp, FaQuestionCircle, FaNetworkWired, FaMobileAlt, FaCreditCard } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom"; // Add this import
 
-const About = ({ language }) => {
+const About = ({ language, setShowPlatform }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const navigate = useNavigate(); // Add this hook
 
   // Add default language fallback
   const currentLanguage = language || 'English';
@@ -105,7 +107,10 @@ const translations = {
             <p className="text-gray-600 text-lg leading-relaxed">
               {translations[currentLanguage]?.description || translations.English.description}
             </p>
-            <button className="mt-6 bg-orange-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-700 transition-all text-lg">
+            <button 
+              onClick={() => setShowPlatform(true)}
+              className="mt-6 bg-orange-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-700 transition-all text-lg"
+            >
               {translations[currentLanguage]?.learnMore || translations.English.learnMore}
             </button>
           </div>

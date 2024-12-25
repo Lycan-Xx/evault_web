@@ -15,9 +15,11 @@ import FAQ from './components/LandingPage/FAQ';
 import Footer from './components/LandingPage/Footer';
 import PrivacyPolicy from './components/LandingPage/Extras/PrivacyPolicy'; // Imported Privacy Policy
 import TermsAndConditions from './components/LandingPage/Extras/TermsAndConditions'; // Imported Terms & Conditions
+import PlatformApp from './components/EvaultPlatform/PlatformApp';
 
 const App = () => {
   const [language, setLanguage] = useState("English");
+  const [showPlatform, setShowPlatform] = useState(false);
 
   // Scroll to the top on route change
   const ScrollToTop = () => {
@@ -27,6 +29,10 @@ const App = () => {
     return null;
   };
 
+  if (showPlatform) {
+    return <PlatformApp onBack={() => setShowPlatform(false)} />;
+  }
+
   return (
     <Router>
       <ScrollToTop />
@@ -35,13 +41,13 @@ const App = () => {
         <Routes>
           <Route path="/" element={
             <>
-              <Hero language={language} /> {/* Change selectedLanguage to language */}
+              <Hero language={language} setShowPlatform={setShowPlatform} />
               <Features />
-              <About language={language} />
-			  <Mission language={language} />
-			  <Services />
+              <About language={language} setShowPlatform={setShowPlatform} />
+              <Mission language={language} />
+              <Services />
               <Feedback />
-              <Offer language={language} />
+              <Offer language={language} setShowPlatform={setShowPlatform} />
               <FAQ />
               <Footer />
             </>

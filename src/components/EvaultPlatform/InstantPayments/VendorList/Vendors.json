@@ -1,0 +1,117 @@
+[
+	{
+		"name": "Amazon Pay",
+		"description": "Fast and secure online payments",
+		"logo": "https://picsum.photos/40/40?random=1"
+	},
+	{
+		"name": "Google Pay",
+		"description": "Pay seamlessly with Google",
+		"logo": "https://picsum.photos/40/40?random=2"
+	},
+	{
+		"name": "PayPal",
+		"description": "Send money securely worldwide",
+		"logo": "https://picsum.photos/40/40?random=3"
+	},
+	{
+		"name": "Stripe",
+		"description": "Payment processing for internet businesses",
+		"logo": "https://picsum.photos/40/40?random=4"
+	},
+	{
+		"name": "Square",
+		"description": "Tools for business payments",
+		"logo": "https://picsum.photos/40/40?random=5"
+	},
+	{
+		"name": "Venmo",
+		"description": "Mobile payment made easy",
+		"logo": "https://picsum.photos/40/40?random=6"
+	},
+	{
+		"name": "Zelle",
+		"description": "Send and receive money instantly",
+		"logo": "https://picsum.photos/40/40?random=7"
+	},
+	{
+		"name": "Cash App",
+		"description": "Money transfer with ease",
+		"logo": "https://picsum.photos/40/40?random=8"
+	},
+	{
+		"name": "Apple Pay",
+		"description": "Payments with Apple devices",
+		"logo": "https://picsum.photos/40/40?random=9"
+	},
+	{
+		"name": "Samsung Pay",
+		"description": "Simple and secure mobile payments",
+		"logo": "https://picsum.photos/40/40?random=10"
+	},
+	{
+		"name": "AliPay",
+		"description": "Global payment platform",
+		"logo": "https://picsum.photos/40/40?random=11"
+	},
+	{
+		"name": "WeChat Pay",
+		"description": "Integrated mobile payment solution",
+		"logo": "https://picsum.photos/40/40?random=12"
+	},
+	{
+		"name": "Greenwood High School",
+		"description": "A nurturing environment for young minds to grow.",
+		"logo": "https://picsum.photos/40/40?random=13"
+	},
+	{
+		"name": "Horizon International School",
+		"description": "Where global perspectives meet local values.",
+		"logo": "https://picsum.photos/40/40?random=14"
+	},
+	{
+		"name": "Maple Leaf Academy",
+		"description": "Fostering creativity and critical thinking in students.",
+		"logo": "https://picsum.photos/40/40?random=15"
+	},
+	{
+		"name": "Riverside Public School",
+		"description": "A community-focused school with a commitment to excellence.",
+		"logo": "https://picsum.photos/40/40?random=16"
+	},
+	{
+		"name": "Sunshine Valley High",
+		"description": "Brightening futures with quality education and support.",
+		"logo": "https://picsum.photos/40/40?random=17"
+	},
+	{
+		"name": "Oakridge Academy",
+		"description": "Empowering students to achieve their full potential.",
+		"logo": "https://picsum.photos/40/40?random=18"
+	},
+	{
+		"name": "Silvercrest High School",
+		"description": "A tradition of academic excellence and community service.",
+		"logo": "https://picsum.photos/40/40?random=19"
+	},
+	{
+		"name": "Bluebell Secondary School",
+		"description": "Cultivating a love for learning in a vibrant environment.",
+		"logo": "https://picsum.photos/40/40?random=20"
+	},
+	{
+		"name": "Eagleview Academy",
+		"description": "Soaring to new heights in education and personal growth.",
+		"logo": "https://picsum.photos/40/40?random=21"
+	},
+	{
+		"name": "Bright Future High School",
+		"description": "Preparing students for a successful tomorrow.",
+		"logo": "https://picsum.photos/40/40?random=22"
+	},
+	{
+		"name": "Lakeside International School",
+		"description": "A diverse community fostering global citizenship.",
+		"logo": "https://picsum.photos/40/40?random=23"
+	}
+]

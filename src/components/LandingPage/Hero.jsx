@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // Add this import
 import image1 from "../assets/image-1.jpg";
 
-const Hero = ({ language }) => { // Change selectedLanguage to language
+const Hero = ({ language, setShowPlatform }) => { // Change selectedLanguage to language
+  const navigate = useNavigate(); // Add this hook
+  
   // Function to scroll to the "Features" section
   const scrollToFeatures = () => {
     const featuresSection = document.getElementById("features");
@@ -92,7 +95,10 @@ const Hero = ({ language }) => { // Change selectedLanguage to language
 
 		  <br />
 
-          <button className="bg-orange-700 px-6 py-3 rounded-md text-lg font-medium hover:bg-orange-400 transition-all duration-300">
+          <button 
+            onClick={() => setShowPlatform(true)}
+            className="bg-orange-700 px-6 py-3 rounded-md text-lg font-medium hover:bg-orange-400 transition-all duration-300"
+          >
             {buttonText[language]}
           </button>
         </div>
